@@ -3,162 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Rush 🎮</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <title>Pixel Rush</title>
+    <meta name="description" content="Pixel Rush — premium browser gaming.">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        header {
-            background: #1b1b1b;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #333;
+    <!-- Three.js -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
         }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 70px 20px;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-        }
-
-        .hero p {
-            margin-top: 10px;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        .games {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .games h2 {
-            margin-bottom: 20px;
-        }
-
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .game-card {
-            background: #1c1c1c;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #333;
-            transition: 0.2s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: #777;
-        }
-
-        .game-icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-
-        .game-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .play-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: white;
-            color: black;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #777;
-        }
-    </style>
+    }
+    </script>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">🎮 Pixel Rush</div>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Games</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>Pixel Rush</h1>
-    <p>Free online games, all in one place.</p>
-</section>
-
-<section class="games">
-    <h2>🔥 Featured Games</h2>
-
-    <div class="game-grid">
-
-        <div class="game-card">
-            <div class="game-icon">🚀</div>
-            <h3>Space Rush</h3>
-            <p>Coming soon...</p>
-            <a class="play-btn" href="#">Play</a>
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-logo">
+            <span>PX</span>
         </div>
 
-        <div class="game-card">
-            <div class="game-icon">🧩</div>
-            <h3>Pixel Puzzle</h3>
-            <p>Coming soon...</p>
-            <a class="play-btn" href="#">Play</a>
+        <div class="loader-name">PIXEL RUSH</div>
+
+        <div class="loader-line">
+            <div id="loader-progress"></div>
         </div>
 
-        <div class="game-card">
-            <div class="game-icon">🏎️</div>
-            <h3>Pixel Racer</h3>
-            <p>Coming soon...</p>
-            <a class="play-btn" href="#">Play</a>
-        </div>
-
+        <div id="loader-percent">0%</div>
     </div>
-</section>
 
-<footer>
-    © 2026 Pixel Rush
-</footer>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="#home" class="brand">
+            <div class="brand-mark">PX</div>
+            <div class="brand-name">PIXEL RUSH</div>
+        </a>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#games">GAMES</a>
+            <a href="#coming">COMING SOON</a>
+        </nav>
+
+        <button class="menu-button" id="menu-button">
+            MENU
+        </button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">HOME</a>
+        <a href="#games">GAMES</a>
+        <a href="#coming">COMING SOON</a>
+    </div>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    BROWSER GAMING / 001
+                </div>
+
+                <h1>
+                    PIXEL<br>
+                    <span>RUSH</span>
+                </h1>
+
+                <p>
+                    A new generation of browser gaming.
+                </p>
+
+                <a href="#games" class="hero-button">
+                    EXPLORE GAMES
+                    <span>→</span>
+                </a>
+
+            </div>
+
+            <div class="hero-bottom">
+                <span>SCROLL TO EXPLORE</span>
+                <span class="scroll-line"></span>
+            </div>
+
+        </section>
+
+
+        <!-- GAME SECTION -->
+        <section class="game-section" id="games">
+
+            <div class="section-label">
+                FEATURED / 001
+            </div>
+
+            <div class="game-heading">
+
+                <div>
+                    <p class="small-title">PIXEL RUSH STUDIOS</p>
+
+                    <h2>
+                        PIXEL<br>
+                        <span>RACER</span>
+                    </h2>
+                </div>
+
+                <div class="game-description">
+                    <p>
+                        Take control. Push the limits.
+                        Experience a lightweight 3D racing
+                        game directly in your browser.
+                    </p>
+
+                    <div class="controls">
+                        <span>W / ↑</span> ACCELERATE
+                        <span>A / ←</span> LEFT
+                        <span>D / →</span> RIGHT
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- 3D GAME -->
+            <div class="game-container">
+
+                <div id="game-loading">
+                    INITIALIZING PIXEL RACER...
+                </div>
+
+                <canvas id="game-canvas"></canvas>
+
+                <div class="game-hud">
+
+                    <div class="hud-speed">
+                        <span id="speed">0</span>
+                        <small>KM/H</small>
+                    </div>
+
+                    <div class="hud-lap">
+                        LAP <span id="lap">1</span>
+                    </div>
+
+                </div>
+
+                <div class="game-message" id="game-message">
+                    <div class="message-title">
+                        PIXEL RACER
+                    </div>
+
+                    <p>
+                        Press W / ↑ to start
+                    </p>
+
+                    <button id="start-button">
+                        START RACE
+                    </button>
+                </div>
+
+                <button id="restart-button" class="restart-button">
+                    RESTART
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMING SOON -->
+        <section class="coming-section" id="coming">
+
+            <div class="coming-inner">
+
+                <div class="section-label">
+                    NEXT / 002
+                </div>
+
+                <div class="coming-number">
+                    02
+                </div>
+
+                <h2>
+                    SOMETHING<br>
+                    <span>NEW</span>
+                </h2>
+
+                <p>
+                    Another experience is currently
+                    being developed for Pixel Rush.
+                </p>
+
+                <div class="coming-line"></div>
+
+                <div class="coming-status">
+                    <span class="status-dot"></span>
+                    IN DEVELOPMENT
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div class="footer-brand">
+                <div class="brand-mark">PX</div>
+                <span>PIXEL RUSH</span>
+            </div>
+
+            <div>
+                © 2026 PIXEL RUSH
+            </div>
+
+            <div>
+                BROWSER GAMING
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script type="module" src="game.js"></script>
 
 </body>
 </html>
